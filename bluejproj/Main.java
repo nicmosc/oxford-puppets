@@ -5,7 +5,7 @@ public class Main
     public static void main(String[] args){
         
         //put args[0] when finished, for now use test value
-        String param = "right_angle.in";
+        String param = "logo.in";
         Painting painting = new Painting(param);
         
         painting.printmap();
@@ -57,6 +57,10 @@ public class Main
             System.out.println("PAINT_LINE " + commandCoords.get(i).r1 + " " + commandCoords.get(i).c1 + " " +
                 commandCoords.get(i).r2 + " " + commandCoords.get(i).c2);
         }
+        
+        System.out.println();
+        System.out.println("Total number of cells: " + paint.row * paint.col);
+        System.out.println("Total score: " + (paint.row * paint.col - commandCoords.size()));
         
     }
 }
