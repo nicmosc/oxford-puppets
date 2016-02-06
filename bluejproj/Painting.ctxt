@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=p
+comment0.target=Painting(java.lang.String)
+comment1.params=r\ c
+comment1.target=boolean\ checkSquare(int,\ int)
+comment2.params=r\ c
+comment2.target=void\ erase_cell(int,\ int)
+comment3.params=r\ c\ s
+comment3.target=void\ paint_square(int,\ int,\ int)
+comment4.params=r1\ c1\ r2\ c2
+comment4.target=void\ paint_line(int,\ int,\ int,\ int)
+comment5.params=
+comment5.target=void\ printmap()
+comment6.params=
+comment6.target=boolean\ check()
+comment7.params=filename
+comment7.target=void\ scanFile(java.lang.String)
+comment8.params=
+comment8.target=void\ initialiseCanvas()
+numComments=9
