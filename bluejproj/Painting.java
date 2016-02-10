@@ -13,6 +13,14 @@ public class Painting {
         scanFile(path);
         
     }
+    
+    public void resetMap(){
+        for(int i=0;i<map.length;i++)
+        {
+            for(int j=0;j<map[i].length;j++)
+                map[i][j] = ' ';
+        }
+    }
 
     public boolean checkSquare(int r,int c)
     {
@@ -28,7 +36,7 @@ public class Painting {
             map[r][c] = '.';
     }
 
-//      paint_square(8,15,5);
+    //      paint_square(8,15,5);
     public void paint_square(int r, int c, int s)
     {
 
@@ -134,29 +142,45 @@ public class Painting {
 
     }
     
-    public void initialiseCanvas (){ //used when printing final result
-        for(int i=0;i<row;i++)
-        {
-            for(int j=0;j<col;j++)
-                map[i][j] = '.';
+    public void scanSolution(String path){
+        String line = null;
+        try{
+
+            File filescan = new File("res/"+path);
+
+            //System.out.println("res/"+path);
+            FileReader f = new FileReader(filescan);
+
+            BufferedReader fileReader = new BufferedReader(f);
+
+            while((line = fileReader.readLine()) != null)
+            {
+                String[] data = line.split(" ");
+                
+                //System.out.println(data[0]); 
+                
+                if(data[0].equals("PAINT_LINE")){
+                    
+                    paint_line(Integer.parseInt(data[1]),
+                    Integer.parseInt(data[2]), 
+                    Integer.parseInt(data[3]), 
+                    Integer.parseInt(data[4]));
+                }
+                
+                else{//implement other methods...
+                }
+            }
+
         }
+        catch(FileNotFoundException e)
+        {
+            System.out.println("Error opening file!");
+        }
+        catch(IOException ex)
+        {
+            System.out.println("Error reading file!!!!");
+        }
+
     }
-
-    /*public static void main(String args[])
-    {
-
-        String file = "res/logo.in";
-
-        scanFile(file);
-
-        printmap();
-        System.out.println();
-        paint_square(6,40,5);
-        erase_cell(6, 40);
-        printmap();
-
-        
-
-    }*/
 
 }
