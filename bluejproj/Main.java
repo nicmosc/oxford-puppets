@@ -14,13 +14,19 @@ public class Main
         
         //METHOD USING ONLY LINE DRAWING (draw line by line)
         
+        painting.printmap();
+        
         lineByLineHorizontal(painting);
 
         //UNCOMMENT THE FOLLOWING TO TEST SOLUTION
         
         //painting.resetMap();
         
+        //painting.printmap();
+        
         //painting.scanSolution(param+".txt");
+        
+        //System.out.println();
         
         //painting.printmap();
         
@@ -58,6 +64,14 @@ public class Main
                 }
                 
             }
+            
+            if(inLine){
+                r2 = r;
+                c2 = paint.map[r].length - 1;
+                
+                commandCoords.add(new Quatruple(r1, c1, r2, c2));
+            }
+           
             inLine = false; // reset when starting a new line
         }
         
