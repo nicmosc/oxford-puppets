@@ -9,7 +9,7 @@ public class Warehouse {
 	public Warehouse(int x, int y){
 		location = new Vector2d(x, y);
 		
-		scoredProds = new HashMap<Integer, Integer>(); // index to weight, amount
+		scoredProds = new HashMap<Integer, Integer>(); // index to amount, weight
 	}
 	
 	public void printInfo(){
